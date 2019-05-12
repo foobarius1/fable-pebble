@@ -1,16 +1,41 @@
 {
   "name": "fsharp-example",
-  "version": "1.0.0",
   "description": "",
+  "version": "1.0.0",
+  "keywords": [
+    "pebble-app"
+  ],
+  "private": true,
+  "author": "bo@kbct.de",
+  "license": "ISC",
   "scripts": {
     "build": "fable-splitter -c fable-splitter.config.js"
   },
-  "author": "bo@kbct.de",
-  "license": "ISC",
+  "pebble": {
+    "displayName": "Fable Example",
+    "uuid": "007d2264-d86e-4e0a-bd33-c7aa25b7adba",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "chalk"
+    ],
+    "watchapp": {
+      "watchface": false
+    },
+    "messageKeys": [
+      "dummy"
+    ],
+    "resources": {
+      "media": []
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "fable-compiler": "^2.3.8",
     "fable-splitter": "^2.1.8"
+  },
+  "dependencies": {
+    "pebblejs": "^1.0.0"
   }
 }

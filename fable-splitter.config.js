@@ -1,6 +1,6 @@
 module.exports = {
-  entry: 'src/App.fsproj',
-  outDir: 'build',
+  entry: 'src/fs/App.fsproj',
+  outDir: 'src/pkjs',
   babel: {
     presets: [["@babel/preset-env", { modules: "commonjs" }]],
   },

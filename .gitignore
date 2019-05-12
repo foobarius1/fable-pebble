@@ -1,4 +1,6 @@
 /build
 /node_modules
+/src/pkjs
 obj
 bin
+.lock*
