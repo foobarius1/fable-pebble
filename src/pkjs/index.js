@@ -1,13 +1,9 @@
+// "polyfill" for fable libs to work
+window.Symbol = { iterator: 'Symbol.iterator' }
+
 Pebble.addEventListener('ready', function() {
-  require('pebblejs');
-  var fable = require('./Program.js')
-  var UI = require('pebblejs/ui');
+  require('pebblejs')
 
-  var card = new UI.Card({
-    title: 'Hello World',
-    body: fable.text,
-    scrollable: true
-  });
-
-  card.show();
+  var app = require('./App.js')
+  app.run()
 });
