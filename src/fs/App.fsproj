@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Pebble.fs" />
+    <Compile Include="Pebble.Libraries.fs" />
+    <Compile Include="Pebble.UI.fs" />
     <Compile Include="App.fs" />
   </ItemGroup>
 

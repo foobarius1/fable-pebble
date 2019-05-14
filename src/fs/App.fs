@@ -1,19 +1,26 @@
 module App
 
-open Pebble
+open Fable.Core
+open Pebble.UI
+
 
 let run() =
-    let text =
-        [ "Hello"
-          "from"
-          "F#" ]
-        |> String.concat " "
+    let menu =
+        let primaryColor = Color.Hex "#ffee00"
+        let secondaryColor = Color.Named "black"
+        [ MenuOption.TextColor primaryColor
+          MenuOption.BackgroundColor secondaryColor
+          MenuOption.HighlightTextColor secondaryColor
+          MenuOption.HighlightBackgroundColor primaryColor
+          MenuOption.Sections
+            [| Menu.section
+                [ SectionOption.Title "Hello"
+                  SectionOption.Items
+                    [| Menu.sectionItem
+                        [ SectionItemOption.Title "Hello"
+                          SectionItemOption.Subtitle "from F# land!" ] |] ] |] ]
+        |> Menu.menu
 
-    let card =
-        UI.Card.create
-            { defaultCardOptions with
-                title = "Hello World"
-                body = text
-                scrollable = true }
-
-    card.show()
+    menu.status (U2.Case1 false)
+    menu.show()
+    menu.setSelection(0, 0)
